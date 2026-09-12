@@ -289,7 +289,7 @@ class TestPlan(RunCase):
     def test_parser_tolerates_crlf_hyphen_and_comments(self):
         text = plan_text(THREE, sep="-").replace("\n", "\r\n")
         text = "<!--\n- [ ] B099 [compose] Example — budget: 5w\n-->\r\n" + text
-        (self.rd / "PLAN.md").write_text(text, encoding="utf-8", newline="")
+        (self.rd / "PLAN.md").write_bytes(text.encode("utf-8"))
         units, errors = bse.parse_plan((self.rd / "PLAN.md").read_text(encoding="utf-8"))
         self.assertEqual(errors, [])
         self.assertEqual([u.id for u in units], ["B001", "B002", "B003"])
