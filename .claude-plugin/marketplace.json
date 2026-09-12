@@ -1,0 +1,14 @@
+{
+  "name": "batched-sequential-execution",
+  "owner": {
+    "name": "Eric Tucker"
+  },
+  "plugins": [
+    {
+      "name": "batched-sequential-execution",
+      "source": "./",
+      "description": "Run a deliverable that is too large for one reliable pass as an ordered series of small, budgeted, independently verified batches, then stitch them into one coherent whole.",
+      "version": "0.1.0"
+    }
+  ]
+}

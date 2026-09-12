@@ -1,0 +1,66 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Byte-compile the tool
+        run: python -m py_compile scripts/bse.py
+
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+
+  examples:
+    # Every directory under examples/ that contains a .bse run (a ledger.json)
+    # must validate, print its status and audit cleanly with the CURRENT tool.
+    # Informational findings are allowed; any non-zero exit fails the build.
+    runs-on: ubuntu-latest
+    needs: unittest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate, status and audit every example run
+        shell: bash
+        run: |
+          set -u
+          status=0
+          found=0
+          while IFS= read -r ledger; do
+            dir=$(dirname "$ledger")
+            found=1
+            echo "::group::$dir"
+            for cmd in "plan --validate" "status" "audit"; do
+              echo "\$ python scripts/bse.py $cmd --run-dir $dir"
+              # shellcheck disable=SC2086
+              if ! python scripts/bse.py $cmd --run-dir "$dir"; then
+                echo "::error::bse.py $cmd failed for $dir"
+                status=1
+              fi
+            done
+            echo "::endgroup::"
+          done < <(find examples -name ledger.json -not -path '*/node_modules/*' | sort)
+          if [ "$found" -eq 0 ]; then
+            echo "::error::no example run directories found under examples/"
+            exit 1
+          fi
+          exit "$status"

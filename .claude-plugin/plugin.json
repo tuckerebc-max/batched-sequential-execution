@@ -1,0 +1,21 @@
+{
+  "name": "batched-sequential-execution",
+  "description": "Run a deliverable that is too large for one reliable pass as an ordered series of small, budgeted, independently verified batches, then stitch them into one coherent whole. Use for long documents (5,000+ words), decks of 20+ slides, multi-step builds, large revision or feedback sweeps, bulk extraction across many sources, or any job where quality visibly decays partway through.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Eric Tucker"
+  },
+  "homepage": "https://github.com/tuckerebc-max/batched-sequential-execution",
+  "repository": "https://github.com/tuckerebc-max/batched-sequential-execution",
+  "license": "MIT",
+  "keywords": [
+    "long-form writing",
+    "batching",
+    "task decomposition",
+    "verification",
+    "ledger",
+    "context management",
+    "agent harness",
+    "skill"
+  ]
+}

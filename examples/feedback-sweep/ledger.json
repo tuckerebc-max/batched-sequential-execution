@@ -1,0 +1,444 @@
+{
+ "charter": "/home/claude/bse/examples/feedback-sweep/CHARTER.md",
+ "created": "2026-09-12T21:39:45Z",
+ "events": [
+  {
+   "forced": false,
+   "kind": "done",
+   "line": "B001 done     2026-09-12T21:44:08Z  artifact=batches/B001.md  words=217  verify=pass(2/2)  sha=ab5f370",
+   "note": null,
+   "ts": "2026-09-12T21:44:08Z",
+   "unit": "B001"
+  },
+  {
+   "forced": false,
+   "kind": "done",
+   "line": "B002 done     2026-09-12T21:44:23Z  artifact=batches/B002.md  words=194  verify=pass(3/3)  sha=b3ddf15",
+   "note": null,
+   "ts": "2026-09-12T21:44:23Z",
+   "unit": "B002"
+  },
+  {
+   "forced": false,
+   "kind": "done",
+   "line": "B003 done     2026-09-12T21:44:38Z  artifact=batches/B003.md  words=118  verify=pass(2/2)  sha=d90ef3d",
+   "note": null,
+   "ts": "2026-09-12T21:44:38Z",
+   "unit": "B003"
+  },
+  {
+   "forced": false,
+   "kind": "done",
+   "line": "B004 done     2026-09-12T21:44:48Z  artifact=batches/B004.md  words=113  verify=pass(3/3)  sha=62ccc1d",
+   "note": null,
+   "ts": "2026-09-12T21:44:48Z",
+   "unit": "B004"
+  },
+  {
+   "forced": false,
+   "kind": "done",
+   "line": "B005 done     2026-09-12T21:45:00Z  artifact=batches/B005.md  words=170  verify=pass(2/2)  sha=49a7069",
+   "note": null,
+   "ts": "2026-09-12T21:45:00Z",
+   "unit": "B005"
+  },
+  {
+   "kind": "blocked",
+   "line": "B006 blocked  2026-09-12T21:45:09Z  reason=item #043 (beta reader, legal) asks to anonymize the cooperative's former finance director; contradicts charter non-negotiable 2 (named on-the-record sources keep full attribution) \u2014 needs a human ruling before this unit can proceed",
+   "note": "item #043 (beta reader, legal) asks to anonymize the cooperative's former finance director; contradicts charter non-negotiable 2 (named on-the-record sources keep full attribution) \u2014 needs a human ruling before this unit can proceed",
+   "ts": "2026-09-12T21:45:09Z",
+   "unit": "B006"
+  },
+  {
+   "kind": "ruling",
+   "line": "RULING        2026-09-12T21:45:19Z  item #043: keep the finance director named per charter non-negotiable 2 \u2014 accountability-journalism standard overrides the legal beta reader's litigation-exposure concern for an on-the-record source who has not asked for anonymity herself. Add one sentence noting she has since left the cooperative amid a board dispute, without characterizing the dispute's merits. Cost if wrong: one paragraph rewrite in Ch3.2 plus a corresponding update to the Back Matter interview list (B016).",
+   "note": "item #043: keep the finance director named per charter non-negotiable 2 \u2014 accountability-journalism standard overrides the legal beta reader's litigation-exposure concern for an on-the-record source who has not asked for anonymity herself. Add one sentence noting she has since left the cooperative amid a board dispute, without characterizing the dispute's merits. Cost if wrong: one paragraph rewrite in Ch3.2 plus a corresponding update to the Back Matter interview list (B016).",
+   "ts": "2026-09-12T21:45:19Z"
+  },
+  {
+   "forced": false,
+   "kind": "done",
+   "line": "B006 done     2026-09-12T21:45:33Z  artifact=batches/B006.md  words=185  verify=pass(2/2)  sha=e5e4f0d  note=resumed per RULING on item #043",
+   "note": "resumed per RULING on item #043",
+   "ts": "2026-09-12T21:45:33Z",
+   "unit": "B006"
+  },
+  {
+   "kind": "review",
+   "line": "B001 review pass  2026-09-12T22:34:21Z  predicates=1  report=reports/B001-review.md  sha=ab5f370",
+   "note": null,
+   "report": "reports/B001-review.md",
+   "sha256": "ab5f37096b2fb8275ffd46673ab4850fa95b04ff2d4a85db0bcf42c56f8421a8",
+   "ts": "2026-09-12T22:34:21Z",
+   "unit": "B001",
+   "verdict": "pass"
+  },
+  {
+   "kind": "review",
+   "line": "B002 review pass  2026-09-12T22:34:21Z  predicates=1  report=reports/B002-review.md  sha=b3ddf15",
+   "note": null,
+   "report": "reports/B002-review.md",
+   "sha256": "b3ddf152f7167b87d2a107835a458d9b42d12ffa64402e25541e73730198eed5",
+   "ts": "2026-09-12T22:34:21Z",
+   "unit": "B002",
+   "verdict": "pass"
+  },
+  {
+   "kind": "review",
+   "line": "B003 review pass  2026-09-12T22:34:21Z  predicates=1  report=reports/B003-review.md  sha=d90ef3d",
+   "note": null,
+   "report": "reports/B003-review.md",
+   "sha256": "d90ef3d62368b522585b874f3ded292ccf997ab4ff707f98a4cccf6b4ff2fc7f",
+   "ts": "2026-09-12T22:34:21Z",
+   "unit": "B003",
+   "verdict": "pass"
+  },
+  {
+   "kind": "review",
+   "line": "B004 review pass  2026-09-12T22:34:21Z  predicates=1  report=reports/B004-review.md  sha=62ccc1d",
+   "note": null,
+   "report": "reports/B004-review.md",
+   "sha256": "62ccc1d94dc92323449c9af6dc6b3cac6c34c35e185d02d75f8c6ee5b5c30354",
+   "ts": "2026-09-12T22:34:21Z",
+   "unit": "B004",
+   "verdict": "pass"
+  },
+  {
+   "kind": "review",
+   "line": "B005 review pass  2026-09-12T22:34:21Z  predicates=1  report=reports/B005-review.md  sha=49a7069",
+   "note": null,
+   "report": "reports/B005-review.md",
+   "sha256": "49a70693bd4600e8ce5b78bc0e19010311a22b7a06bae57dcea9f318361ac5a6",
+   "ts": "2026-09-12T22:34:21Z",
+   "unit": "B005",
+   "verdict": "pass"
+  },
+  {
+   "kind": "review",
+   "line": "B006 review pass  2026-09-12T22:34:21Z  predicates=1  report=reports/B006-review.md  sha=e5e4f0d",
+   "note": null,
+   "report": "reports/B006-review.md",
+   "sha256": "e5e4f0de9c24abb78653806fcf128f98b1672e77e81dcf3c60b817c6910b28f7",
+   "ts": "2026-09-12T22:34:21Z",
+   "unit": "B006",
+   "verdict": "pass"
+  }
+ ],
+ "plan_validated": {
+  "ts": "2026-09-12T22:42:38Z",
+  "units": [
+   "B001",
+   "B002",
+   "B003",
+   "B004",
+   "B005",
+   "B006",
+   "B007",
+   "B008",
+   "B009",
+   "B010",
+   "B011",
+   "B012",
+   "B013",
+   "B014",
+   "B015",
+   "B016",
+   "B017"
+  ]
+ },
+ "run_id": "feedback-sweep-1",
+ "title": "The Last Utility \u2014 Feedback Sweep",
+ "total": "120items",
+ "units": {
+  "B001": {
+   "artifact": "batches/B001.md",
+   "attempts": 1,
+   "fix_rounds": 0,
+   "history": [],
+   "reviews": [
+    {
+     "artifact": "batches/B001.md",
+     "note": null,
+     "predicates": [
+      "source: each resolution's stated action, checked against its numbered item's exact text in sources/reviewer-feedback-log.md, accurately reflects what that item asked for"
+     ],
+     "report": "reports/B001-review.md",
+     "sha256": "ab5f37096b2fb8275ffd46673ab4850fa95b04ff2d4a85db0bcf42c56f8421a8",
+     "ts": "2026-09-12T22:34:21Z",
+     "verdict": "pass"
+    }
+   ],
+   "sha256": "ab5f37096b2fb8275ffd46673ab4850fa95b04ff2d4a85db0bcf42c56f8421a8",
+   "status": "done",
+   "updated": "2026-09-12T22:36:23Z",
+   "verify": {
+    "artifact": "batches/B001.md",
+    "checks": [
+     {
+      "detail": "item_count 7 within 15% of 7 [6-8]",
+      "expr": "item_count within 15% of budget",
+      "name": "item_count",
+      "passed": true
+     },
+     {
+      "detail": "no placeholders",
+      "expr": "no_placeholders",
+      "name": "no_placeholders",
+      "passed": true
+     }
+    ],
+    "failed": 0,
+    "judgement_pending": [
+     "source: each resolution's stated action, checked against its numbered item's exact text in sources/reviewer-feedback-log.md, accurately reflects what that item asked for"
+    ],
+    "passed": 2,
+    "ran_at": "2026-09-12T22:36:23Z",
+    "sha256": "ab5f37096b2fb8275ffd46673ab4850fa95b04ff2d4a85db0bcf42c56f8421a8",
+    "words": 217
+   },
+   "words": 217
+  },
+  "B002": {
+   "artifact": "batches/B002.md",
+   "attempts": 1,
+   "fix_rounds": 0,
+   "history": [],
+   "reviews": [
+    {
+     "artifact": "batches/B002.md",
+     "note": null,
+     "predicates": [
+      "source: each resolution's stated action, checked against its numbered item's exact text in sources/reviewer-feedback-log.md, accurately reflects what that item asked for"
+     ],
+     "report": "reports/B002-review.md",
+     "sha256": "b3ddf152f7167b87d2a107835a458d9b42d12ffa64402e25541e73730198eed5",
+     "ts": "2026-09-12T22:34:21Z",
+     "verdict": "pass"
+    }
+   ],
+   "sha256": "b3ddf152f7167b87d2a107835a458d9b42d12ffa64402e25541e73730198eed5",
+   "status": "done",
+   "updated": "2026-09-12T22:34:21Z",
+   "verify": {
+    "artifact": "batches/B002.md",
+    "checks": [
+     {
+      "detail": "item_count 10 within 15% of 10 [8-12]",
+      "expr": "item_count within 15% of budget",
+      "name": "item_count",
+      "passed": true
+     },
+     {
+      "detail": "no placeholders",
+      "expr": "no_placeholders",
+      "name": "no_placeholders",
+      "passed": true
+     },
+     {
+      "detail": "no forbidden phrases",
+      "expr": "forbidden_phrases",
+      "name": "forbidden_phrases",
+      "passed": true
+     }
+    ],
+    "failed": 0,
+    "judgement_pending": [],
+    "passed": 3,
+    "ran_at": "2026-09-12T21:44:21Z",
+    "sha256": "b3ddf152f7167b87d2a107835a458d9b42d12ffa64402e25541e73730198eed5",
+    "words": 194
+   },
+   "words": 194
+  },
+  "B003": {
+   "artifact": "batches/B003.md",
+   "attempts": 1,
+   "fix_rounds": 0,
+   "history": [],
+   "reviews": [
+    {
+     "artifact": "batches/B003.md",
+     "note": null,
+     "predicates": [
+      "source: each resolution's stated action, checked against its numbered item's exact text in sources/reviewer-feedback-log.md, accurately reflects what that item asked for"
+     ],
+     "report": "reports/B003-review.md",
+     "sha256": "d90ef3d62368b522585b874f3ded292ccf997ab4ff707f98a4cccf6b4ff2fc7f",
+     "ts": "2026-09-12T22:34:21Z",
+     "verdict": "pass"
+    }
+   ],
+   "sha256": "d90ef3d62368b522585b874f3ded292ccf997ab4ff707f98a4cccf6b4ff2fc7f",
+   "status": "done",
+   "updated": "2026-09-12T22:34:21Z",
+   "verify": {
+    "artifact": "batches/B003.md",
+    "checks": [
+     {
+      "detail": "item_count 7 within 15% of 7 [6-8]",
+      "expr": "item_count within 15% of budget",
+      "name": "item_count",
+      "passed": true
+     },
+     {
+      "detail": "no placeholders",
+      "expr": "no_placeholders",
+      "name": "no_placeholders",
+      "passed": true
+     }
+    ],
+    "failed": 0,
+    "judgement_pending": [],
+    "passed": 2,
+    "ran_at": "2026-09-12T21:44:33Z",
+    "sha256": "d90ef3d62368b522585b874f3ded292ccf997ab4ff707f98a4cccf6b4ff2fc7f",
+    "words": 118
+   },
+   "words": 118
+  },
+  "B004": {
+   "artifact": "batches/B004.md",
+   "attempts": 1,
+   "fix_rounds": 0,
+   "history": [],
+   "reviews": [
+    {
+     "artifact": "batches/B004.md",
+     "note": null,
+     "predicates": [
+      "source: each resolution's stated action, checked against its numbered item's exact text in sources/reviewer-feedback-log.md, accurately reflects what that item asked for"
+     ],
+     "report": "reports/B004-review.md",
+     "sha256": "62ccc1d94dc92323449c9af6dc6b3cac6c34c35e185d02d75f8c6ee5b5c30354",
+     "ts": "2026-09-12T22:34:21Z",
+     "verdict": "pass"
+    }
+   ],
+   "sha256": "62ccc1d94dc92323449c9af6dc6b3cac6c34c35e185d02d75f8c6ee5b5c30354",
+   "status": "done",
+   "updated": "2026-09-12T22:34:21Z",
+   "verify": {
+    "artifact": "batches/B004.md",
+    "checks": [
+     {
+      "detail": "item_count 6 within 15% of 6 [5-7]",
+      "expr": "item_count within 15% of budget",
+      "name": "item_count",
+      "passed": true
+     },
+     {
+      "detail": "no placeholders",
+      "expr": "no_placeholders",
+      "name": "no_placeholders",
+      "passed": true
+     },
+     {
+      "detail": "no forbidden phrases",
+      "expr": "forbidden_phrases",
+      "name": "forbidden_phrases",
+      "passed": true
+     }
+    ],
+    "failed": 0,
+    "judgement_pending": [],
+    "passed": 3,
+    "ran_at": "2026-09-12T21:44:45Z",
+    "sha256": "62ccc1d94dc92323449c9af6dc6b3cac6c34c35e185d02d75f8c6ee5b5c30354",
+    "words": 113
+   },
+   "words": 113
+  },
+  "B005": {
+   "artifact": "batches/B005.md",
+   "attempts": 1,
+   "fix_rounds": 0,
+   "history": [],
+   "reviews": [
+    {
+     "artifact": "batches/B005.md",
+     "note": null,
+     "predicates": [
+      "source: each resolution's stated action, checked against its numbered item's exact text in sources/reviewer-feedback-log.md, accurately reflects what that item asked for"
+     ],
+     "report": "reports/B005-review.md",
+     "sha256": "49a70693bd4600e8ce5b78bc0e19010311a22b7a06bae57dcea9f318361ac5a6",
+     "ts": "2026-09-12T22:34:21Z",
+     "verdict": "pass"
+    }
+   ],
+   "sha256": "49a70693bd4600e8ce5b78bc0e19010311a22b7a06bae57dcea9f318361ac5a6",
+   "status": "done",
+   "updated": "2026-09-12T22:34:21Z",
+   "verify": {
+    "artifact": "batches/B005.md",
+    "checks": [
+     {
+      "detail": "item_count 8 within 15% of 8 [7-9]",
+      "expr": "item_count within 15% of budget",
+      "name": "item_count",
+      "passed": true
+     },
+     {
+      "detail": "no placeholders",
+      "expr": "no_placeholders",
+      "name": "no_placeholders",
+      "passed": true
+     }
+    ],
+    "failed": 0,
+    "judgement_pending": [],
+    "passed": 2,
+    "ran_at": "2026-09-12T21:44:57Z",
+    "sha256": "49a70693bd4600e8ce5b78bc0e19010311a22b7a06bae57dcea9f318361ac5a6",
+    "words": 170
+   },
+   "words": 170
+  },
+  "B006": {
+   "artifact": "batches/B006.md",
+   "attempts": 1,
+   "fix_rounds": 0,
+   "history": [],
+   "reviews": [
+    {
+     "artifact": "batches/B006.md",
+     "note": null,
+     "predicates": [
+      "source: each resolution's stated action, checked against its numbered item's exact text in sources/reviewer-feedback-log.md, accurately reflects what that item asked for"
+     ],
+     "report": "reports/B006-review.md",
+     "sha256": "e5e4f0de9c24abb78653806fcf128f98b1672e77e81dcf3c60b817c6910b28f7",
+     "ts": "2026-09-12T22:34:21Z",
+     "verdict": "pass"
+    }
+   ],
+   "sha256": "e5e4f0de9c24abb78653806fcf128f98b1672e77e81dcf3c60b817c6910b28f7",
+   "status": "done",
+   "updated": "2026-09-12T22:34:21Z",
+   "verify": {
+    "artifact": "batches/B006.md",
+    "checks": [
+     {
+      "detail": "item_count 8 within 15% of 8 [7-9]",
+      "expr": "item_count within 15% of budget",
+      "name": "item_count",
+      "passed": true
+     },
+     {
+      "detail": "no placeholders",
+      "expr": "no_placeholders",
+      "name": "no_placeholders",
+      "passed": true
+     }
+    ],
+    "failed": 0,
+    "judgement_pending": [],
+    "passed": 2,
+    "ran_at": "2026-09-12T21:45:29Z",
+    "sha256": "e5e4f0de9c24abb78653806fcf128f98b1672e77e81dcf3c60b817c6910b28f7",
+    "words": 185
+   },
+   "words": 185
+  }
+ }
+}
