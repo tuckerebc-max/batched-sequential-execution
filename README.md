@@ -206,6 +206,10 @@ batched-sequential-execution/
   .github/workflows/test.yml    CI: unittest across Python 3.9-3.13, plus an examples job
 ```
 
+## Evaluating effectiveness
+
+Use the [evaluation protocol](evaluation/EVALUATION.md) and [per-run scorecard](evaluation/TRIAL-TEMPLATE.md) to measure fidelity, completeness, coherence, correction effort, and overhead on suitable tasks. The [readiness baseline](evaluation/BASELINE.json) records software checks; comparative effectiveness trials are still pending. See the [adoption notes](evaluation/README.md) for the pilot and comparison cadence.
+
 ## Credits
 
 This design borrows deliberately from field-tested harnesses and published

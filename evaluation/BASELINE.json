@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "record_type": "software_readiness_baseline",
+  "source_repository": "tuckerebc-max/batched-sequential-execution",
+  "source_commit": "91392bdf5206c5e7833b04092a5ff1a683e36f75",
+  "source_commit_provenance": "Supplied in assignment; package is a copied snapshot without its own .git history. No remote verification performed.",
+  "scope": "CLI help and existing TestReviewGate only; no full-suite or example-ledger rerun.",
+  "captured_at_utc": "2026-09-12T19:30:49.687695-07:00",
+  "environment": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python_executable": "python",
+    "python_version": "3.11.15",
+    "timezone_context": "America/Phoenix; measurements use UTC"
+  },
+  "capture_command": "& 'python' -B scratch/run_baseline.py",
+  "commands": [
+    {
+      "id": "python_version",
+      "argv": [
+        "python",
+        "-B",
+        "--version"
+      ],
+      "powershell_command": "& 'python' '-B' '--version'",
+      "cwd": "<evaluation-workspace>",
+      "environment_overrides": {
+        "TEMP": "<evaluation-workspace>\\scratch\\test-temp",
+        "TMP": "<evaluation-workspace>\\scratch\\test-temp",
+        "TMPDIR": "<evaluation-workspace>\\scratch\\test-temp",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "started_at_utc": "2026-09-12T19:30:47.517765-07:00",
+      "elapsed_seconds": 0.029322,
+      "exit_code": 0,
+      "stdout": "Python 3.11.15\n",
+      "stderr": ""
+    },
+    {
+      "id": "cli_help",
+      "argv": [
+        "python",
+        "-B",
+        "package/scripts/bse.py",
+        "--help"
+      ],
+      "powershell_command": "& 'python' '-B' 'package/scripts/bse.py' '--help'",
+      "cwd": "<evaluation-workspace>",
+      "environment_overrides": {
+        "TEMP": "<evaluation-workspace>\\scratch\\test-temp",
+        "TMP": "<evaluation-workspace>\\scratch\\test-temp",
+        "TMPDIR": "<evaluation-workspace>\\scratch\\test-temp",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "started_at_utc": "2026-09-12T19:30:47.546984-07:00",
+      "elapsed_seconds": 0.185291,
+      "exit_code": 0,
+      "stdout": "usage: bse.py [-h] [--run-dir RUN_DIR] [--json] COMMAND ...\n\nThe seven-move loop:\n  CHARTER -> PLAN -> [ BRIEF -> EXECUTE -> VERIFY -> RECORD ] * N -> STITCH -> SEAM\n  init/plan --validate  |  next -> brief -> (executor) -> check [-> review] -> record  |  stitch -> seam pass -> audit\nVERIFY has two gates: `check` (mechanical predicates) and `review` (judgement predicates, source:/charter:).\n`stitch` writes draft.md only; the seam pass writes front-matter.md, back-matter.md and final.md by hand.\n\npositional arguments:\n  COMMAND\n    init             scaffold a run dir with templates\n    plan             parse PLAN.md; --validate runs the plan gate\n    status           table: id, type, status, attempts, budget, words, review\n                     (pending/stale/pass/fail)\n    next             print the next unblocked unit ID (empty when all done;\n                     exit 1 on an empty or never-validated plan)\n    brief            assemble briefs/ID.md = charter + spec + carry + input\n                     slices\n    check            run the unit's mechanical verifiers; write reports/ID.md.\n                     Re-running on a changed artifact after a failing check\n                     counts a fix round (cap 3)\n    review           store a reviewer's verdict on the unit's judgement\n                     predicates (source:/charter:), keyed to the artifact's\n                     sha256; required before `record --status done` for such\n                     units\n    record           append a ledger event: done | blocked | fix (or RULING\n                     --note)\n    carry            replace (--set FILE), print (--show) or test (--check)\n                     the baton; 400-word cap\n    stitch           assemble draft.md in plan order + reports/stitch.md;\n                     never writes final.md\n    audit            ledger vs filesystem consistency: phantom-complete,\n                     hash/review mismatches, stale carry, missing/stale seam\n                     pass (final.md)\n\noptions:\n  -h, --help         show this help message and exit\n  --run-dir RUN_DIR  run directory (default: ./.bse/<most recent>)\n  --json             machine-readable output\n",
+      "stderr": ""
+    },
+    {
+      "id": "review_help",
+      "argv": [
+        "python",
+        "-B",
+        "package/scripts/bse.py",
+        "review",
+        "--help"
+      ],
+      "powershell_command": "& 'python' '-B' 'package/scripts/bse.py' 'review' '--help'",
+      "cwd": "<evaluation-workspace>",
+      "environment_overrides": {
+        "TEMP": "<evaluation-workspace>\\scratch\\test-temp",
+        "TMP": "<evaluation-workspace>\\scratch\\test-temp",
+        "TMPDIR": "<evaluation-workspace>\\scratch\\test-temp",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "started_at_utc": "2026-09-12T19:30:47.732372-07:00",
+      "elapsed_seconds": 0.182964,
+      "exit_code": 0,
+      "stdout": "usage: bse.py review [-h] [--run-dir RUN_DIR] [--json] --verdict {pass,fail}\n                     --report PATH [--artifact ARTIFACT] [--note NOTE]\n                     id\n\npositional arguments:\n  id\n\noptions:\n  -h, --help            show this help message and exit\n  --run-dir RUN_DIR     run directory (default: ./.bse/<most recent>)\n  --json                machine-readable output\n  --verdict {pass,fail}\n  --report PATH         the reviewer's written report (must exist)\n  --artifact ARTIFACT   artifact path (default batches/ID.md)\n  --note NOTE           free text, e.g. reviewer identity or a one-line\n                        finding\n",
+      "stderr": ""
+    },
+    {
+      "id": "review_gate_tests",
+      "argv": [
+        "python",
+        "-B",
+        "package/tests/test_bse.py",
+        "TestReviewGate",
+        "-v"
+      ],
+      "powershell_command": "& 'python' '-B' 'package/tests/test_bse.py' 'TestReviewGate' '-v'",
+      "cwd": "<evaluation-workspace>",
+      "environment_overrides": {
+        "TEMP": "<evaluation-workspace>\\scratch\\test-temp",
+        "TMP": "<evaluation-workspace>\\scratch\\test-temp",
+        "TMPDIR": "<evaluation-workspace>\\scratch\\test-temp",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "started_at_utc": "2026-09-12T19:30:47.914987-07:00",
+      "elapsed_seconds": 1.746635,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_artifact_edit_after_review_invalidates_it (__main__.TestReviewGate.test_artifact_edit_after_review_invalidates_it) ... ok\ntest_audit_catches_done_without_matching_review (__main__.TestReviewGate.test_audit_catches_done_without_matching_review) ... ok\ntest_check_summary_distinguishes_the_halves (__main__.TestReviewGate.test_check_summary_distinguishes_the_halves) ... ok\ntest_force_overrides_missing_review_and_stamps_forced (__main__.TestReviewGate.test_force_overrides_missing_review_and_stamps_forced) ... ok\ntest_record_done_refused_on_fail_verdict (__main__.TestReviewGate.test_record_done_refused_on_fail_verdict) ... ok\ntest_record_done_refused_without_review_then_allowed_after_pass (__main__.TestReviewGate.test_record_done_refused_without_review_then_allowed_after_pass) ... ok\ntest_review_is_usage_error_without_judgement_predicates (__main__.TestReviewGate.test_review_is_usage_error_without_judgement_predicates) ... ok\ntest_review_pass_is_stored_keyed_to_sha_in_both_ledgers (__main__.TestReviewGate.test_review_pass_is_stored_keyed_to_sha_in_both_ledgers) ... ok\ntest_review_requires_existing_report_and_artifact (__main__.TestReviewGate.test_review_requires_existing_report_and_artifact) ... ok\ntest_status_shows_review_column (__main__.TestReviewGate.test_status_shows_review_column) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 1.539s\n\nOK\n"
+    }
+  ],
+  "observed_results": {
+    "test_class": "TestReviewGate",
+    "tests_run": 10,
+    "unittest_reported_seconds": 1.539,
+    "test_suite_exit_code": 0,
+    "all_requested_commands_exit_zero": true,
+    "package_unchanged": true,
+    "remaining_test_temp_entries": []
+  },
+  "package_integrity": {
+    "method": "Compare every package file's SHA-256, byte size and mtime_ns before and after commands; detect additions/removals.",
+    "files_before": 137,
+    "files_after": 137,
+    "manifest_sha256_before": "e64158fa30c3ec61577b3108643b21b774460c32e15fd3c4c943dba328a07fe6",
+    "manifest_sha256_after": "e64158fa30c3ec61577b3108643b21b774460c32e15fd3c4c943dba328a07fe6",
+    "changed_paths": [],
+    "key_file_sha256": {
+      "SKILL.md": "e6add4b5f5aff726c9828d09a1652645adfc85c7bedab8af5dd25afbdcf8dcee",
+      "scripts/bse.py": "172365d6cc1c9cf190836d144fd4ae25e44117f0f531859ec3e8ee9119d2011b",
+      "tests/test_bse.py": "a1f8a97c8b563422d1de4b533a8f9134144dad37441d853a0021d6790916733e",
+      "references/light-mode.md": "5910bc9b959a23ccebb14a4a3ebda5f902c24afcbfd036d350089b33fc1062e5",
+      "references/verification.md": "3da14e48cbc8bbee9a527aeb816145cce56a8e45bdb094df644dba3125af3dab"
+    }
+  },
+  "fixture_boundary": "TestReviewGate creates disposable fixtures beneath scratch/test-temp. Its plan --validate calls, ledger edits, and forced-record tests operate there only. No example commands or example-ledger validation were run. Python -B disables package bytecode writes.",
+  "prior_checks_as_reported_not_rerun": {
+    "source": "Assignment",
+    "test_count": 130,
+    "python_versions": [
+      "3.9",
+      "3.10",
+      "3.11",
+      "3.12",
+      "3.13"
+    ],
+    "example_checks": 4,
+    "identical_installed_file_count_per_seat": 137,
+    "installation_parity_independently_verified_here": false
+  },
+  "approval_denials": [],
+  "approval_denials_note": "No sandbox or approval denial observed; negative assertions inside TestReviewGate are expected application behavior, not approval denials. No escalation or bypass of approval controls used.",
+  "comparative_effectiveness_trial_completed": false,
+  "completed_comparative_trials": 0,
+  "effectiveness_statement": "No comparative effectiveness trial has yet been completed. CLI and regression tests are software checks, not evidence that batching improves real work.",
+  "usage_and_cost": {
+    "model_tokens": null,
+    "monetary_cost": null,
+    "reason": "No measured model usage or billing data available for this evaluation; command wall time is recorded separately and is not BSE task overhead."
+  },
+  "material_defects": {
+    "found_in_bounded_check": [],
+    "limitation": "This is not a comprehensive security, installation-parity, or functional audit. Review identity and judgment quality are not authenticated by passing these software tests."
+  },
+  "publication_note": "Machine-specific workspace and Python executable paths are replaced with <evaluation-workspace> and python. Commands describe the original copied-snapshot check; recorded exit codes, test output, timings, and content hashes are preserved. The historical scratch capture script is not part of this documentation package; individual commands are recorded below."
+}
