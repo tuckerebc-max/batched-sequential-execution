@@ -1,6 +1,6 @@
 {
   "name": "batched-sequential-execution",
-  "description": "Run a deliverable that is too large for one reliable pass as an ordered series of small, budgeted, independently verified batches, then stitch them into one coherent whole. Use for long documents (5,000+ words), decks of 20+ slides, multi-step builds, large revision or feedback sweeps, bulk extraction across many sources, or any job where quality visibly decays partway through.",
+  "description": "Run a deliverable that is too large for one reliable pass as an ordered series of small, budgeted, independently verified batches, then stitch them into one coherent whole. Use for long documents (10,000+ words), decks of 30+ slides, multi-step builds, large revision or feedback sweeps, bulk extraction across many sources, or any job where quality visibly decays partway through.",
   "version": "0.1.0",
   "author": {
     "name": "Eric Tucker"
